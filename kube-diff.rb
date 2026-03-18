@@ -5,21 +5,21 @@
 class KubeDiff < Formula
   desc "Compare local Kubernetes manifests against live cluster state"
   homepage "https://github.com/somaz94/kube-diff"
-  version "0.1.0"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/somaz94/kube-diff/releases/download/v0.1.0/kube-diff_0.1.0_darwin_amd64.tar.gz"
-      sha256 "3fdae5870eb03bc0e92c899b552e045070285535aa23b4f4745f2e895ebe99bc"
+      url "https://github.com/somaz94/kube-diff/releases/download/v0.2.0/kube-diff_0.2.0_darwin_amd64.tar.gz"
+      sha256 "1a83814938a54d512754b17a0f9fd2a731a77662aeaa0827ae77e6f734673482"
 
       define_method(:install) do
         bin.install "kube-diff"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/somaz94/kube-diff/releases/download/v0.1.0/kube-diff_0.1.0_darwin_arm64.tar.gz"
-      sha256 "dfa809abebb5970cb9c6adfd71821f7e156eb4cc818f87008de684eee73f714c"
+      url "https://github.com/somaz94/kube-diff/releases/download/v0.2.0/kube-diff_0.2.0_darwin_arm64.tar.gz"
+      sha256 "968898f41222d2a00515c10763368d4a6ad0c72e1a83e4a82cc18d2317b5a2c3"
 
       define_method(:install) do
         bin.install "kube-diff"
@@ -29,15 +29,15 @@ class KubeDiff < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/kube-diff/releases/download/v0.1.0/kube-diff_0.1.0_linux_amd64.tar.gz"
-      sha256 "817d04a4ed9d23ac1913787d0dcc02d804d6d141f79a0c456c1b11e6311aa187"
+      url "https://github.com/somaz94/kube-diff/releases/download/v0.2.0/kube-diff_0.2.0_linux_amd64.tar.gz"
+      sha256 "f4a5a8415466ae6830fbf25e331a79d69d7352ff847f395c6001106cc5828749"
       define_method(:install) do
         bin.install "kube-diff"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/kube-diff/releases/download/v0.1.0/kube-diff_0.1.0_linux_arm64.tar.gz"
-      sha256 "4616c3dd11a5a9a5d58ee3417d6d8eaeb7dee5d7a0d8c6e384b571adf0196652"
+      url "https://github.com/somaz94/kube-diff/releases/download/v0.2.0/kube-diff_0.2.0_linux_arm64.tar.gz"
+      sha256 "c7685262a4e48eae91628e091111860850f6f22628d8e0a9f1ce647348ee8b01"
       define_method(:install) do
         bin.install "kube-diff"
       end
