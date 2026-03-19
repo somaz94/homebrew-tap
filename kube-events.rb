@@ -5,21 +5,21 @@
 class KubeEvents < Formula
   desc "View and summarize Kubernetes events with grouping and highlighting"
   homepage "https://github.com/somaz94/kube-events"
-  version "0.2.0"
+  version "0.3.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/somaz94/kube-events/releases/download/v0.2.0/kube-events_0.2.0_darwin_amd64.tar.gz"
-      sha256 "6bfd91f1f3ec574dc779b27cdd4f97b1750c7e21ec3ca3def87704ddb245ef18"
+      url "https://github.com/somaz94/kube-events/releases/download/v0.3.0/kube-events_0.3.0_darwin_amd64.tar.gz"
+      sha256 "4ac4d8f50d24b01f8b1d97754ff456127b27403c212b90bdbf17d64f23547b9d"
 
       define_method(:install) do
         bin.install "kube-events"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/somaz94/kube-events/releases/download/v0.2.0/kube-events_0.2.0_darwin_arm64.tar.gz"
-      sha256 "d24912b461e56e51de7f439930ca137d732e644c73ac9751e61e4c2e580174e3"
+      url "https://github.com/somaz94/kube-events/releases/download/v0.3.0/kube-events_0.3.0_darwin_arm64.tar.gz"
+      sha256 "9525d66f4c74770bbe82b1c80b52c4280a70b77956bceba02f3062c140c8b6ec"
 
       define_method(:install) do
         bin.install "kube-events"
@@ -29,15 +29,15 @@ class KubeEvents < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/kube-events/releases/download/v0.2.0/kube-events_0.2.0_linux_amd64.tar.gz"
-      sha256 "a5a53096f7fd2e9d72d72a72686ff9fdb49c6b3336103828b087145a5e42ae98"
+      url "https://github.com/somaz94/kube-events/releases/download/v0.3.0/kube-events_0.3.0_linux_amd64.tar.gz"
+      sha256 "d60bab5d944e8aa08ed6533bb395e776f0c10862fce1deb311fc1395adf90d64"
       define_method(:install) do
         bin.install "kube-events"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/kube-events/releases/download/v0.2.0/kube-events_0.2.0_linux_arm64.tar.gz"
-      sha256 "e7e5c8d6895579626023d10ecaf07122e8d5771cd3d9cb63f29cd7bd6c35bb9b"
+      url "https://github.com/somaz94/kube-events/releases/download/v0.3.0/kube-events_0.3.0_linux_arm64.tar.gz"
+      sha256 "b5aa56f267766ccd59b209facbc95811a0e7d8def14a34605d05666fc402a4f3"
       define_method(:install) do
         bin.install "kube-events"
       end
@@ -52,6 +52,7 @@ class KubeEvents < Formula
         kube-events                        # View recent events (last 1h)
         kube-events -n <namespace>         # Filter by namespace
         kube-events -t Warning             # Show warnings only
+        kube-events -g namespace           # Group by namespace
         kube-events -w                     # Watch events in real-time
         kube-events -s                     # Summary statistics only
         kube-events --help                 # Full usage
