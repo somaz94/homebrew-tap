@@ -5,21 +5,21 @@
 class KubeDiff < Formula
   desc "Compare local Kubernetes manifests against live cluster state"
   homepage "https://github.com/somaz94/kube-diff"
-  version "0.4.0"
+  version "0.4.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/somaz94/kube-diff/releases/download/v0.4.0/kube-diff_0.4.0_darwin_amd64.tar.gz"
-      sha256 "675b57223e86257b25a4ae18fe8157418f2923327f138dad1cc2bbe315a8dbb1"
+      url "https://github.com/somaz94/kube-diff/releases/download/v0.4.1/kube-diff_0.4.1_darwin_amd64.tar.gz"
+      sha256 "2d7e2b6e7af5b45c9abc5a1c8ba5e4b1f6ad1d1812e7bb13b540be5797eb6706"
 
       define_method(:install) do
         bin.install "kube-diff"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/somaz94/kube-diff/releases/download/v0.4.0/kube-diff_0.4.0_darwin_arm64.tar.gz"
-      sha256 "9973922e7fd45e6741212fc46f331dc628825f71f4c6450badcb26091c900208"
+      url "https://github.com/somaz94/kube-diff/releases/download/v0.4.1/kube-diff_0.4.1_darwin_arm64.tar.gz"
+      sha256 "44ebc90a59accbefbed7b5db04563df13ed64d69779893e4b4f00ee7595b7113"
 
       define_method(:install) do
         bin.install "kube-diff"
@@ -29,19 +29,33 @@ class KubeDiff < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/kube-diff/releases/download/v0.4.0/kube-diff_0.4.0_linux_amd64.tar.gz"
-      sha256 "021a83aec955ff1dc51aa743925bf61b241fed77b190c24de5d759670719b1db"
+      url "https://github.com/somaz94/kube-diff/releases/download/v0.4.1/kube-diff_0.4.1_linux_amd64.tar.gz"
+      sha256 "a1c4aa2a979a81bbe5529109cb453dbdc64e5ba2820519efae3b5b81373af4b7"
       define_method(:install) do
         bin.install "kube-diff"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/kube-diff/releases/download/v0.4.0/kube-diff_0.4.0_linux_arm64.tar.gz"
-      sha256 "24ae96f8016ab179570bd6ad3bb5c92e980a35bbe0fbef6896a054b6496c7e27"
+      url "https://github.com/somaz94/kube-diff/releases/download/v0.4.1/kube-diff_0.4.1_linux_arm64.tar.gz"
+      sha256 "1313d17b70e0919cb3de583be1e25cc6f34d92b55197f4c97589133b89222412"
       define_method(:install) do
         bin.install "kube-diff"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      🎉 kube-diff installed!
+
+      Quick start:
+        kube-diff file <path>              # Compare YAML files vs cluster
+        kube-diff helm <chart> -r <name>   # Compare Helm chart vs cluster
+        kube-diff kustomize <path>         # Compare Kustomize vs cluster
+        kube-diff --help                   # Full usage
+
+      Docs: https://github.com/somaz94/kube-diff
+    EOS
   end
 
   test do
