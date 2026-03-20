@@ -5,21 +5,21 @@
 class BashPilot < Formula
   desc "A powerful CLI toolkit for bash power users — SSH, Git, Env, Prompt"
   homepage "https://github.com/somaz94/bash-pilot"
-  version "0.1.1"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/somaz94/bash-pilot/releases/download/v0.1.1/bash-pilot_0.1.1_darwin_amd64.tar.gz"
-      sha256 "a7f7552ae9d24520900e3a6204c4786bb684586ac9fcbc27fb17fbe55561c951"
+      url "https://github.com/somaz94/bash-pilot/releases/download/v0.2.0/bash-pilot_0.2.0_darwin_amd64.tar.gz"
+      sha256 "84d79d6c4d0420728f23ccb91cae0c27f9cc1cff314f22f438443746e281d16b"
 
       define_method(:install) do
         bin.install "bash-pilot"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/somaz94/bash-pilot/releases/download/v0.1.1/bash-pilot_0.1.1_darwin_arm64.tar.gz"
-      sha256 "8dd4821b7216d4bfb4e60c8450edf87ff87111943729eda6007a6f52be54b706"
+      url "https://github.com/somaz94/bash-pilot/releases/download/v0.2.0/bash-pilot_0.2.0_darwin_arm64.tar.gz"
+      sha256 "4fa61e51428d062fc45c45ee39b977d896ca079a8dab3da4bd172f14988230e8"
 
       define_method(:install) do
         bin.install "bash-pilot"
@@ -29,15 +29,15 @@ class BashPilot < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/bash-pilot/releases/download/v0.1.1/bash-pilot_0.1.1_linux_amd64.tar.gz"
-      sha256 "7cc5090510d70b329e7518b267fc00b1a177e3ced8a9639ed3631a9f4a87e5a7"
+      url "https://github.com/somaz94/bash-pilot/releases/download/v0.2.0/bash-pilot_0.2.0_linux_amd64.tar.gz"
+      sha256 "1660fa7efba3cddc3ddc868b618005de96c599399c310515e15fc5bdfc55780d"
       define_method(:install) do
         bin.install "bash-pilot"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/bash-pilot/releases/download/v0.1.1/bash-pilot_0.1.1_linux_arm64.tar.gz"
-      sha256 "b28f65b14a0e58e6461311e77eefb65e8cd00e70f627f645c18908863670d4c5"
+      url "https://github.com/somaz94/bash-pilot/releases/download/v0.2.0/bash-pilot_0.2.0_linux_arm64.tar.gz"
+      sha256 "50e16319de4a1535150766026d87eb05297efe29c1b2443ab2b0bc59480f257e"
       define_method(:install) do
         bin.install "bash-pilot"
       end
@@ -53,6 +53,9 @@ class BashPilot < Formula
         bash-pilot ssh list              # List SSH hosts with grouping
         bash-pilot ssh ping              # Test connectivity (parallel)
         bash-pilot ssh audit             # Security audit
+        bash-pilot git profiles          # List git identity profiles
+        bash-pilot git doctor            # Diagnose gitconfig issues
+        bash-pilot git clean --dry-run   # Preview stale/duplicate cleanup
         bash-pilot --help                # Full usage
 
       Docs: https://github.com/somaz94/bash-pilot
