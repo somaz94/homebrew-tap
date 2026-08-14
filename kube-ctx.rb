@@ -5,21 +5,21 @@
 class KubeCtx < Formula
   desc "Switch Kubernetes contexts and namespaces, per-terminal and with production guards"
   homepage "https://github.com/somaz94/kube-ctx"
-  version "0.1.0"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/somaz94/kube-ctx/releases/download/v0.1.0/kube-ctx_0.1.0_darwin_amd64.tar.gz"
-      sha256 "4b2b05c78654117cc720ac432b6f6702a69fcbad5b51d0e264af7ba27ccd3c70"
+      url "https://github.com/somaz94/kube-ctx/releases/download/v0.2.0/kube-ctx_0.2.0_darwin_amd64.tar.gz"
+      sha256 "4a4061d7d5d6de38795e6761b67a8342cbf615d019fa60121fb540a6a35fe3b4"
 
       define_method(:install) do
         bin.install "kctx"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/somaz94/kube-ctx/releases/download/v0.1.0/kube-ctx_0.1.0_darwin_arm64.tar.gz"
-      sha256 "294351d43eb3d5978e65d3930008e1dca1daa9899a6ff66ec143331bf34452ae"
+      url "https://github.com/somaz94/kube-ctx/releases/download/v0.2.0/kube-ctx_0.2.0_darwin_arm64.tar.gz"
+      sha256 "7a6a92b9a5d621e9a56c41a5896a0edf6beadc740712e9181cf252b4eefcd69f"
 
       define_method(:install) do
         bin.install "kctx"
@@ -29,15 +29,15 @@ class KubeCtx < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/kube-ctx/releases/download/v0.1.0/kube-ctx_0.1.0_linux_amd64.tar.gz"
-      sha256 "c87daa1c2c6a9936897d66c0228832d3105fd818ec18e340f2c2026ec5c63def"
+      url "https://github.com/somaz94/kube-ctx/releases/download/v0.2.0/kube-ctx_0.2.0_linux_amd64.tar.gz"
+      sha256 "38deb9d06f59d8ec71095bd76643d75508c5017556834708559bfe41ec62dfc8"
       define_method(:install) do
         bin.install "kctx"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/somaz94/kube-ctx/releases/download/v0.1.0/kube-ctx_0.1.0_linux_arm64.tar.gz"
-      sha256 "9300e0c8d28a8fcee1ee28c63611fda31a882b054b2d41cd9a36ac94de49c377"
+      url "https://github.com/somaz94/kube-ctx/releases/download/v0.2.0/kube-ctx_0.2.0_linux_arm64.tar.gz"
+      sha256 "443757ed20a7f10b3fbaab77af07abb2eeb55a723cf0be3661a56d6a804b5f9d"
       define_method(:install) do
         bin.install "kctx"
       end
