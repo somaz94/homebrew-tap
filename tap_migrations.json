@@ -1,3 +1,6 @@
 {
-  "kube-ctx": "somaz94/tap"
+  "bash-pilot": "somaz94/tap",
+  "kube-ctx": "somaz94/tap",
+  "kube-diff": "somaz94/tap",
+  "kube-events": "somaz94/tap"
 }
